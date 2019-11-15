@@ -15,7 +15,7 @@ Input: str1 = "gksrek", str2 = "geeksforgeeks"
 Output: True (str1 is a subsequence of str2)
 '''
 
-# iterative
+'''iterative'''
 def is_subsequence(str1, str2):
     len1 = len(str1)
     len2 = len(str2)
@@ -38,10 +38,23 @@ def is_subsequence(str1, str2):
         print("False")
 
 
+def is_subsequence_recursive(str1, str2, m, n):
+    if m == 0:
+        return True
+    if n == 0:
+        return False
+
+    '''compare last character and move on'''
+    if str1[m-1] == str2[n-1]:
+        ''' we found a match, lets decrease both'''
+        return is_subsequence_recursive(str1, str2, m-1, n-1)
+    else:
+        return is_subsequence_recursive(str1, str2, m, n-1)
+
 # str1 = "AXY"
 # str2 = "ADXCPY"
 # is_subsequence(str1, str2)
 
 str1 = "AXY"
 str2 = "YADXCP"
-is_subsequence(str1, str2)
+print(str(is_subsequence_recursive(str1, str2, len(str1), len(str2))))

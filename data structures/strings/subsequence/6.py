@@ -1,6 +1,8 @@
 '''
 Number of subsequences as “ab” in a string repeated K times
-Given a String S, consider a new string formed by repeating the S exactly K times. We need find the number of subsequences as “ab” in the newly formed string.
+Given a String S, consider a new string formed by repeating 
+the S exactly K times. We need find the number of subsequences 
+as “ab” in the newly formed string.
 
 Examples :
 
